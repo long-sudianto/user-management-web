@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>User Management Web</title>
+
+    <link th:rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">User Management Web</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/list-user">User</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mt-5 mb-5">
+                <h3>Add new user</h3>
+                <form th:action="@{/save-user}" th:object="${user}" method="POST">
+                    <input type="text" th:field="*{username}" class="form-control col-4 mb-4"
+                        placeholder="Enter Username" />
+                    <input type="text" th:field="*{fullname}" class="form-control col-4 mb-4"
+                        placeholder="Enter Fullname" />
+                    <input type="text" th:field="*{email}" class="form-control col-4 mb-4" placeholder="Enter Email" />
+                    <input type="text" th:field="*{phoneNumber}" class="form-control col-4 mb-4"
+                        placeholder="Enter Phone Number" />
+                    <button type="submit" class="btn btn-primary col-2">Save</button>
+                    <input type="hidden" th:field="*{id}" />
+                </form>
+                <hr />
+                <a th:href="@{/list-user}">Back to list</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

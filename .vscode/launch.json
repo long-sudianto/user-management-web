@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-UserManagementWebApplication<user-management-web>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.bca.usermanagementweb.UserManagementWebApplication",
+            "projectName": "user-management-web",
+            "args": ""
+        }
+    ]
+}
